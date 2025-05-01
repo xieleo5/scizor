@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scizor: A Self-Supervised Approach to Data Curation for Large-Scale Imitation Learning</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 40px;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+    h1, h2 {
+      color: #222;
+    }
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Scizor: A Self-Supervised Approach to Data Curation for Large-Scale Imitation Learning</h1>
+  </header>
+
+  <section>
+    <h2>Abstract</h2>
+    <p>Imitation learning advances robot capabilities by enabling the acquisition of diverse behaviors from human demonstrations. However, large-scale datasets used for policy training often introduce substantial variability in quality, which can negatively impact performance. As a result, automatically curating datasets by filtering low-quality samples to improve quality becomes essential. Existing robotic curation approaches rely on costly manual annotations and perform curation at a coarse granularity, such as the dataset or trajectory level, failing to account for the quality of individual state-action pairs. To address this, we introduce Scizor, a self-supervised data curation framework that filters out low-quality state-action pairs to improve the performance of imitation learning policies. Scizor targets two complementary sources of low-quality data: suboptimal data, which hinder learning with undesirable actions, and redundant data, which dilute training with repetitive patterns. Scizor leverages a self-supervised task progress predictor for suboptimal data to remove samples lacking task progression, and a deduplication module operating on joint state-action representation for samples with redundant patterns. Empirically, we show that Scizor enables imitation learning policies to achieve higher performance with less data, yielding an average improvement of 15.4% across multiple benchmarks.</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Scizor | For research purposes only.</p>
+  </footer>
+
+</body>
+</html>
