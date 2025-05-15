@@ -1,43 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Scizor: A Self-Supervised Approach to Data Curation for Large-Scale Imitation Learning</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 40px;
-      background-color: #f8f8f8;
-      color: #333;
-    }
-    h1, h2 {
-      color: #222;
-    }
-    section {
-      margin-bottom: 40px;
-      padding: 20px;
-      background: white;
-      border-radius: 8px;
-      box-shadow: 0 0 10px #ccc;
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SCIZOR: Self-Supervised Data Curation for Imitation Learning</title>
+
+  <!-- Vendor CSS -->
+  <link rel="stylesheet" href="style/bulma.min.css">
+  <link rel="stylesheet" href="style/bulma-carousel.min.css">
+  <link rel="stylesheet" href="style/bulma-slider.min.css">
+  <link rel="stylesheet" href="style/academicons.min.css">
+  <link rel="stylesheet" href="js/fontawesome.all.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style/index.css">
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand container">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  </nav>
 
-  <header>
-    <h1>Scizor: A Self-Supervised Approach to Data Curation for Large-Scale Imitation Learning</h1>
-  </header>
-
-  <section>
-    <h2>Abstract</h2>
-    <p>Imitation learning advances robot capabilities by enabling the acquisition of diverse behaviors from human demonstrations. However, large-scale datasets used for policy training often introduce substantial variability in quality, which can negatively impact performance. As a result, automatically curating datasets by filtering low-quality samples to improve quality becomes essential. Existing robotic curation approaches rely on costly manual annotations and perform curation at a coarse granularity, such as the dataset or trajectory level, failing to account for the quality of individual state-action pairs. To address this, we introduce Scizor, a self-supervised data curation framework that filters out low-quality state-action pairs to improve the performance of imitation learning policies. Scizor targets two complementary sources of low-quality data: suboptimal data, which hinder learning with undesirable actions, and redundant data, which dilute training with repetitive patterns. Scizor leverages a self-supervised task progress predictor for suboptimal data to remove samples lacking task progression, and a deduplication module operating on joint state-action representation for samples with redundant patterns. Empirically, we show that Scizor enables imitation learning policies to achieve higher performance with less data, yielding an average improvement of 15.4% across multiple benchmarks.</p>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SCIZOR: Self-Supervised Data Curation for Imitation Learning</h1>
+            <p class="is-size-5 publication-authors">
+              <a href="#">Anonymous Author(s)</a>
+            </p>
+            <!-- <p class="is-size-5 publication-authors">The University of Texas at Austin</p> -->
+            <p class="is-size-5 publication-authors has-text-primary">9th Conference on Robot Learning (CoRL 2025)</p>
+            <div class="publication-links" style="margin-top:1rem;">
+              <!-- <a href="#" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Arxiv</span></a> -->
+              <a href="./paper.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span>Paper</span></a>
+              <!-- <a href="#" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Scizor | For research purposes only.</p>
-  </footer>
+  <!-- Teaser -->
+  <section class="hero teaser">
+    <div class="hero-body">
+      <div class="container is-max-desktop has-text-centered">
+        <!-- video here -->
+        <div class="publication-video" style="margin-top:2rem;">
+          <video controls width="100%" style="border-radius:6px;">
+            <source src="video/supp_video.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Main Content -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>Imitation learning advances robot capabilities by enabling the acquisition of diverse behaviors from human demonstrations. However, large-scale datasets used for policy training often introduce substantial variability in quality, which can negatively impact performance. As a result, automatically curating datasets by filtering low-quality samples to improve quality becomes essential. Existing robotic curation approaches rely on costly manual annotations and perform curation at a coarse granularity, such as the dataset or trajectory level, failing to account for the quality of individual state-action pairs. To address this, we introduce Scizor, a self-supervised data curation framework that filters out low-quality state-action pairs to improve the performance of imitation learning policies. Scizor targets two complementary sources of low-quality data: suboptimal data, which hinder learning with undesirable actions, and redundant data, which dilute training with repetitive patterns. Scizor leverages a self-supervised task progress predictor for suboptimal data to remove samples lacking task progression, and a deduplication module operating on joint state-action representation for samples with redundant patterns. Empirically, we show that Scizor enables imitation learning policies to achieve higher performance with less data, yielding an average improvement of 15.4% across multiple benchmarks.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Overview -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">Overview</h2>
+          <div class="has-text-centered">
+            <img src="images/teaser_figure_v2.4_00.png" alt="Overview" style="max-width:100%;border-radius:6px;">
+          </div>
+          <div class="content has-text-justified">
+              <p>SCIZOR is a self-supervised data curation pipeline that slashes large imitation datasets by automatically pruning two types of low-value samples:</p>
+              <ul>
+                <li><strong>Suboptimal transitions</strong> - a progress-prediction model flags and removes frames that fail to make meaningful task progress, without needing reward signals.</li>
+                <li><strong>Redundant state-action pairs</strong> - joint visual-action embeddings are clustered to detect and discard look-alike segments, ensuring diversity.</li>
+              </ul>
+              <p>By combining both filters, SCIZOR targets distinct sources of noise and repetition, yielding a higher-quality training set.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Method -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Method</h2>
+          <div class="has-text-centered">
+            <img src="images/Figure2_v2_00.png" alt="Overview" style="max-width:100%;border-radius:6px;">
+          </div>
+          <div class="column">
+            <h3 class="title is-4">Suboptimal Transition Removal</h3>
+            <p>We train a self-supervised progress estimator that predicts how much progress a robot makes over short intervals. Transitions where predicted progress falls significantly below the elapsed time are flagged as suboptimal. This lets us automatically remove segments that stall or deviate from the task, all without any reward annotations.</p>
+          </div>
+          <div class="column">
+            <h3 class="title is-4">State-Action Deduplication</h3>
+            <p>We encode fixed-duration chunks into joint visual-action embeddings and use K-means clustering to group similar samples. Within each cluster, samples with high similarity scores are pruned, eliminating overrepresented patterns while preserving rare variations. This ensures a diverse, compact dataset that improves downstream learning.</p>
+          </div>
+          </div>
+        </div>
+          
+      <!-- Experiments -->
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">Experiments</h2>
+          <div class="has-text-centered">
+            <img src="images/main_results_v1.7_00.png" alt="Overview" style="max-width:100%;border-radius:6px;">
+          </div>
+          <div class="content has-text-justified">
+            <p>We evaluate SCIZOR's impact on policy success rates across three benchmark: <strong>Robomimic</strong>, <strong>Sirius-Fleet</strong> and <strong>Open-X</strong>.  Compared to training on the full dataset, SCIZOR delivers absolute gains of <strong>5.4%,</strong> on RoboMimic, <strong>8.1%</strong> on OXE-Magic-Soup, and <strong>32.9%</strong> on the Sirius-Fleet real-robot tasks. It also surpasses uniform curation by <strong>16.1%</strong> on average, indicating that SCIZOR has a targeted selection of samples to be deleted. These improvements demonstrate that SCIZOR's data curation consistently filters out low-quality samples and improves policy learning in both simulated and real-world robotic environments.</p>
+          </div>
+          <div class="content has-text-justified">
+            <p>We also evaluated SCIZOR against two leading curation methods: <strong>DemInf</strong> (trajectory-level mutual information estimation) and <strong>Re-Mix</strong> (dataset-level domain weighting). In the RT-X mixture setting, SCIZOR beat Re-Mix by <strong>3.5%</strong> on average. On RoboMimic, DemInf slightly outperformed SCIZOR due to pre-divided trajectory quality tiers. However, on the Sirius-Fleet dataset—where quality varies across human and policy data—SCIZOR outshone DemInf by <strong>19.2%</strong>, highlighting the advantage of fine-grained state-action curation under uneven data distributions.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Conclusion -->
+      <!-- <div class="columns is-centered">
+        <div class="column is-four-fifths has-text-centered">
+          <h2 class="title is-3">Conclusion</h2>
+          <div class="content has-text-justified">
+            <p>SCIZOR offers a plug-and-play ...</p>
+          </div>
+        </div>
+      </div> -->
+      <!-- BibTeX -->
+      <!-- <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3 has-text-centered">BibTeX</h2>
+          <pre><code>@inproceedings{scizor2025,...}</code></pre>
+        </div>
+      </div>
+    </div> -->
+  </section>
+
+  <!-- Vendor JS -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/fontawesome.all.min.js"></script>
+  <script src="style/bulma-carousel.min.js"></script>
+  <script src="style/bulma-slider.min.js"></script>
+
+  <!-- Custom JS -->
+  <script src="js/index.js"></script>
 </body>
 </html>
