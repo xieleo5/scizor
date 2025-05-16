@@ -151,3 +151,69 @@ body {
   display: block;
   object-fit: contain;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.increase {
+  color: green;
+}
+
+.video-row {
+  display: flex;
+  justify-content: flex-end; /* aligns items inside the row to the right */
+  gap: 6px;
+  margin-top: 20px;
+  max-width: 95%;
+  margin-left: auto;
+  margin-right: 5px;
+}
+.video-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.video-box video {
+  border-radius: 2px;
+}
+.square-video {
+  width: 240px;
+  height: 240px;
+}
+.rect-video {
+  width: 307px;
+  height: 240px;
+}
+
+
+.failure-pair {
+  display: flex;
+  width: 45%;
+  align-items: center;
+  gap: 15px;
+}
+.failure-pair video {
+  width: 140px;
+  height: auto;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+.description {
+  font-size: 15px;
+  line-height: 1.4;
+}
+.description b {
+  font-weight: bold;
+}
+
+.failure-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}

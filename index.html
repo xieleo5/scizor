@@ -55,7 +55,7 @@
     <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
         <!-- video here -->
-        <div class="publication-video" style="margin-top:2rem;">
+        <div class="publication-video" style="margin-top:0rem;">
           <video controls width="100%" style="border-radius:6px;">
             <source src="video/supp_video.mp4" type="video/mp4">
           </video>
@@ -98,13 +98,13 @@
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Method</h2>
           <div class="has-text-centered">
-            <img src="images/Figure2_v2_00.png" alt="Overview" style="max-width:100%;border-radius:6px;">
+            <img src="images/Figure2_v2_00.png" alt="Overview" style="max-width:100%;border-radius:6px;margin-bottom:10px">
           </div>
-          <div class="column">
+          <div class="content has-text-justified">
             <h3 class="title is-4">Suboptimal Transition Removal</h3>
             <p>We train a self-supervised progress estimator that predicts how much progress a robot makes over short intervals. Transitions where predicted progress falls significantly below the elapsed time are flagged as suboptimal. This lets us automatically remove segments that stall or deviate from the task, all without any reward annotations.</p>
           </div>
-          <div class="column">
+          <div class="content has-text-justified">
             <h3 class="title is-4">State-Action Deduplication</h3>
             <p>We encode fixed-duration chunks into joint visual-action embeddings and use K-means clustering to group similar samples. Within each cluster, samples with high similarity scores are pruned, eliminating overrepresented patterns while preserving rare variations. This ensures a diverse, compact dataset that improves downstream learning.</p>
           </div>
@@ -115,14 +115,132 @@
       <div class="columns is-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">Experiments</h2>
+          
+          <div class="content has-text-justified">
+            <p>We evaluate SCIZOR's impact on policy success rates across three benchmark: <strong>Robomimic</strong>, <strong>Sirius-Fleet</strong> and <strong>Open-X</strong>.  Compared to training on the full dataset, SCIZOR delivers absolute gains of <strong>5.4%,</strong> on RoboMimic, <strong>8.1%</strong> on OXE-Magic-Soup, and <strong>32.9%</strong> on the Sirius-Fleet real-robot tasks. It also surpasses uniform curation by <strong>16.1%</strong> on average, indicating that SCIZOR has a targeted selection of samples to be deleted. These improvements demonstrate that SCIZOR's data curation consistently filters out low-quality samples and improves policy learning in both simulated and real-world robotic environments.</p>
+          </div>
+
+          <div class="video-row">
+            <div class="video-box">
+              <video autoplay loop muted playsinline class="square-video">
+                <source src="video/robomimic_crop.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-box">
+              <video autoplay loop muted playsinline class="square-video">
+                <source src="video/ours.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="video-box">
+              <video autoplay loop muted playsinline class="rect-video">
+                <source src="video/simpler_crop.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
           <div class="has-text-centered">
             <img src="images/main_results_v1.7_00.png" alt="Overview" style="max-width:100%;border-radius:6px;">
           </div>
           <div class="content has-text-justified">
-            <p>We evaluate SCIZOR's impact on policy success rates across three benchmark: <strong>Robomimic</strong>, <strong>Sirius-Fleet</strong> and <strong>Open-X</strong>.  Compared to training on the full dataset, SCIZOR delivers absolute gains of <strong>5.4%,</strong> on RoboMimic, <strong>8.1%</strong> on OXE-Magic-Soup, and <strong>32.9%</strong> on the Sirius-Fleet real-robot tasks. It also surpasses uniform curation by <strong>16.1%</strong> on average, indicating that SCIZOR has a targeted selection of samples to be deleted. These improvements demonstrate that SCIZOR's data curation consistently filters out low-quality samples and improves policy learning in both simulated and real-world robotic environments.</p>
-          </div>
-          <div class="content has-text-justified">
             <p>We also evaluated SCIZOR against two leading curation methods: <strong>DemInf</strong> (trajectory-level mutual information estimation) and <strong>Re-Mix</strong> (dataset-level domain weighting). In the RT-X mixture setting, SCIZOR beat Re-Mix by <strong>3.5%</strong> on average. On RoboMimic, DemInf slightly outperformed SCIZOR due to pre-divided trajectory quality tiers. However, on the Sirius-Fleet dataset—where quality varies across human and policy data—SCIZOR outshone DemInf by <strong>19.2%</strong>, highlighting the advantage of fine-grained state-action curation under uneven data distributions.</p>
+          </div>
+
+          <h3 class="title is-4">Scizor significantly enhances policy performance on real-world datasets.</h3>
+      
+          <div class="grid">
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_hotbowl_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Bowl To Plate:<br>93.3% <span class="increase">(↑28.3%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_cup_to_basket_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Mug To Basket:<br>66.7% <span class="increase">(↑31.7%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_book_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Book to Caddy:<br>66.7% <span class="increase">(↑26.7%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_bread_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Bread to Plate:<br>90.0% <span class="increase">(↑40.0%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_cup_to_plate_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Mug To Plate:<br>83.3% <span class="increase">(↑48.3%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_redbowl_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Bowl To Basket:<br>96.7% <span class="increase">(↑36.7%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_cup_to_cad_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Cup To Caddy:<br>73.3% <span class="increase">(↑8.3%)</span></div>
+            </div>
+            <div class="item">
+              <video autoplay loop muted playsinline>
+                <source src="video/ours_cup_to_oven_merged_sdr.mp4" type="video/mp4">
+              </video>
+              <div class="label">Mug to Oven:<br>66.7% <span class="increase">(↑31.7%)</span></div>
+            </div>
+          </div>
+
+
+          <h3 class="title is-4">Visualization of suboptimal types classified by Scizor.</h3>
+          <div class="failure-container">
+            <div class="failure-pair">
+              <video autoplay loop muted playsinline>
+                <source src="video/drop_crop.mp4" type="video/mp4">
+              </video>
+              <div class="description"><b>Manipulation Failure:</b> The bowl held by the robot dropped accidentally.</div>
+            </div>
+          
+            <div class="failure-pair">
+              <video autoplay loop muted playsinline>
+                <source src="video/slow_crop.mp4" type="video/mp4">
+              </video>
+              <div class="description"><b>Slow Motion:</b> The robot gripper moved towards the bowl at a slow pace.</div>
+            </div>
+          
+            <div class="failure-pair">
+              <video autoplay loop muted playsinline>
+                <source src="video/manip_crop.mp4" type="video/mp4">
+              </video>
+              <div class="description"><b>Manipulation Failure:</b> The robot gripper failed to grasp the blue mug.</div>
+            </div>
+          
+            <div class="failure-pair">
+              <video autoplay loop muted playsinline>
+                <source src="video/collision_crop.mp4" type="video/mp4">
+              </video>
+              <div class="description"><b>Stuck at Collision:</b> The book held by the robot collided with the caddy, leading to a halt.</div>
+            </div>
+          
+            <div class="failure-pair">
+              <video autoplay loop muted playsinline>
+                <source src="video/pause_crop.mp4" type="video/mp4">
+              </video>
+              <div class="description"><b>Pause:</b> The robot arm stopped at behind the cereal box for a long time.</div>
+            </div>
+          
+            <div class="failure-pair">
+              <video autoplay loop muted playsinline>
+                <source src="video/backforth_crop.mp4" type="video/mp4">
+              </video>
+              <div class="description"><b>Move Back and Forth:</b> The robot arm moved aimlessly and didn’t contribute to the task progress.</div>
+            </div>
           </div>
         </div>
       </div>
@@ -143,6 +261,11 @@
         </div>
       </div>
     </div> -->
+
+    
+  <footer>
+    <p>© 2025 Scizor | For research purposes only.</p>
+  </footer>
   </section>
 
   <!-- Vendor JS -->
@@ -153,5 +276,6 @@
 
   <!-- Custom JS -->
   <script src="js/index.js"></script>
+
 </body>
 </html>
