@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SCIZOR: Self-Supervised Data Curation for Imitation Learning</title>
+  <title>SCIZOR: Self-Supervised Data Curation for Large-Scale Imitation Learning</title>
 
   <link rel="icon" href="images/Scizor_Icon.webp" type="image/webp">
 
@@ -37,7 +37,8 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SCIZOR <img src="images/scizor-icon.png" alt="SCIZOR icon" style="height:1.5em; vertical-align:middle; transform: scaleX(-1); margin-left:-0.2em; margin-right:-0.1em;">: Self-Supervised Data Curation for Large-Scale Imitation Learning</h1>
+            <h1 class="title is-2 publication-title">SCIZOR <img src="images/scizor-icon.png" alt="SCIZOR icon" style="height:1.5em; vertical-align:middle; transform: scaleX(-1); margin-left:-0.3em; margin-right:-0.4em;">
+              : Self-Supervised Data Curation <br> for Large-Scale Imitation Learning</h1>
             <p class="is-size-5 publication-authors">
               <a href="https://www.linkedin.com/in/yu-zhang-b004a9290">Yu Zhang<sup>1</sup>*</a>, 
               <a href="https://xieleo5.github.io">Yuqi Xie<sup>1,2</sup>*</a>, 
@@ -56,7 +57,7 @@
             <!-- <p class="is-size-5 publication-authors">The University of Texas at Austin</p> -->
             <!-- <p class="is-size-5 publication-authors has-text-primary">Arxiv</p> -->
             <div class="publication-links" style="margin-top:1rem;">
-              <a href="./paper.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+              <a href="./scizor.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
               <!-- <a href="./paper.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span>Paper</span></a> -->
               <a href="#" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fab fa-github"></i></span><span>Code (Coming Soon)</span></a>
             </div>
@@ -99,7 +100,7 @@
         <div class="column is-four-fifths has-text-centered">
           <h2 class="title is-3">Overview</h2>
           <div class="has-text-centered">
-            <img src="images/teasor_figure_v2.5.pdf" alt="Overview" style="max-width:100%;border-radius:6px;">
+            <img src="images/teasor_figure_v2.5.png" alt="Overview" style="max-width:100%;border-radius:6px;">
           </div>
           <div class="content has-text-justified">
               <p>SCIZOR is a self-supervised data curation pipeline that slashes large imitation datasets by automatically pruning two types of low-value samples:</p>
@@ -171,7 +172,7 @@
           </div>
           <br>
           <div class="content has-text-justified">
-            <p>We also evaluated SCIZOR against two leading curation methods: <strong><a href="https://joeyhejna.com/demonstration-info/">DemInf</a></strong> (trajectory-level mutual information estimation) and <strong><a href="https://arxiv.org/abs/2408.14037">Re-Mix</a></strong> (dataset-level domain weighting). In the RT-X mixture setting, SCIZOR beat Re-Mix by <strong>3.5%</strong> on average. On RoboMimic, DemInf slightly outperformed SCIZOR due to pre-divided trajectory quality tiers. However, on the Sirius-Fleet dataset—where quality varies across human and policy data—SCIZOR outshone DemInf by <strong>19.2%</strong>, highlighting the advantage of fine-grained state-action curation under uneven data distributions.</p>
+            <p>We also evaluated SCIZOR against two leading curation methods: <a href="https://joeyhejna.com/demonstration-info/" style="color: black; text-decoration: underline;">DemInf</a> (trajectory-level mutual information estimation) and <a href="https://arxiv.org/abs/2408.14037" style="color: black; text-decoration: underline;">Re-Mix</a> (dataset-level domain weighting). In the RT-X mixture setting, SCIZOR beat Re-Mix by <strong>3.5%</strong> on average. On RoboMimic, DemInf slightly outperformed SCIZOR due to pre-divided trajectory quality tiers. However, on the Sirius-Fleet dataset—where quality varies across human and policy data—SCIZOR outshone DemInf by <strong>19.2%</strong>, highlighting the advantage of fine-grained state-action curation under uneven data distributions.</p>
           </div>
 
           <h3 class="title is-4">SCIZOR greatly boosts policy performance on real-world datasets.</h3>
@@ -228,7 +229,7 @@
           </div>
 
 
-          <h3 class="title is-4">Types of suboptimal data identified by SCIZOR.</h3>
+          <h3 class="title is-4">We visualize the types of suboptimal data identified by SCIZOR.</h3>
           <div class="failure-container">
             <div class="failure-pair">
               <video autoplay loop muted playsinline>
