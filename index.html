@@ -5,12 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>SCIZOR: Self-Supervised Data Curation for Imitation Learning</title>
 
+  <link rel="icon" href="images/Scizor_Icon.webp" type="image/webp">
+
   <!-- Vendor CSS -->
   <link rel="stylesheet" href="style/bulma.min.css">
   <link rel="stylesheet" href="style/bulma-carousel.min.css">
   <link rel="stylesheet" href="style/bulma-slider.min.css">
   <link rel="stylesheet" href="style/academicons.min.css">
-  <link rel="stylesheet" href="js/fontawesome.all.min.css">
+  <!-- <link rel="stylesheet" href="js/fontawesome.all.min.css"> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="style/index.css">
@@ -33,22 +37,36 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">SCIZOR: Self-Supervised Data Curation for Large-Scale Imitation Learning</h1>
+            <h1 class="title is-1 publication-title">SCIZOR <img src="images/scizor-icon.png" alt="SCIZOR icon" style="height:1.5em; vertical-align:middle; transform: scaleX(-1); margin-left:-0.2em; margin-right:-0.1em;">: Self-Supervised Data Curation for Large-Scale Imitation Learning</h1>
             <p class="is-size-5 publication-authors">
-              <a href="#">Anonymous Author(s)</a>
+              <a href="https://www.linkedin.com/in/yu-zhang-b004a9290">Yu Zhang<sup>1</sup>*</a>, 
+              <a href="https://xieleo5.github.io">Yuqi Xie<sup>1,2</sup>*</a>, 
+              <a href="https://huihanl.github.io">Huihan Liu<sup>1†</sup></a>, 
+              <a href="https://shahrutav.github.io">Rutav Shah<sup>1†</sup></a>,<br>
+              <a href="https://www.linkedin.com/in/michaelwan1/">Michael Wan<sup>2</sup></a>, 
+              <a href="https://jimfan.me">Linxi “Jim” Fan<sup>2</sup></a>, 
+              <a href="https://yukezhu.me">Yuke Zhu<sup>1,2</sup></a>
+            </p>
+            <p class="is-size-5 publication-authors">
+              <sup>1</sup>: University of Texas at Austin, <sup>2</sup>: NVIDIA
+            </p>
+            <p class="is-size-6 publication-authors">
+              *: Equal contribution &nbsp;&nbsp; †: Equal advising
             </p>
             <!-- <p class="is-size-5 publication-authors">The University of Texas at Austin</p> -->
-            <p class="is-size-5 publication-authors has-text-primary">9th Conference on Robot Learning (CoRL 2025)</p>
+            <!-- <p class="is-size-5 publication-authors has-text-primary">Arxiv</p> -->
             <div class="publication-links" style="margin-top:1rem;">
-              <!-- <a href="#" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Arxiv</span></a> -->
-              <a href="./paper.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span>Paper</span></a>
-              <!-- <a href="#" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a> -->
+              <a href="./paper.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+              <!-- <a href="./paper.pdf" class="button is-rounded is-dark" style="margin:0 .5rem;"><span>Paper</span></a> -->
+              <a href="#" class="button is-rounded is-dark" style="margin:0 .5rem;"><span class="icon"><i class="fab fa-github"></i></span><span>Code (Coming Soon)</span></a>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+
 
   <!-- Teaser -->
   <section class="hero teaser">
@@ -57,7 +75,7 @@
         <!-- video here -->
         <div class="publication-video" style="margin-top:0rem;">
           <video controls width="100%" style="border-radius:6px;">
-            <source src="video/supp_video.mp4" type="video/mp4">
+            <source src="video/scizor_twitter.mp4" type="video/mp4">
           </video>
         </div>
       </div>
@@ -81,13 +99,13 @@
         <div class="column is-four-fifths has-text-centered">
           <h2 class="title is-3">Overview</h2>
           <div class="has-text-centered">
-            <img src="images/teaser_figure_v2.4.png" alt="Overview" style="max-width:100%;border-radius:6px;">
+            <img src="images/teasor_figure_v2.5.pdf" alt="Overview" style="max-width:100%;border-radius:6px;">
           </div>
           <div class="content has-text-justified">
               <p>SCIZOR is a self-supervised data curation pipeline that slashes large imitation datasets by automatically pruning two types of low-value samples:</p>
               <ul>
                 <li><strong>Suboptimal transitions</strong>: a progress-prediction model flags and removes frames that fail to make meaningful task progress, without needing reward signals.</li>
-                <li><strong>Redundant state-action pairs</strong>: joint visual-action embeddings are clustered to detect and discard look-alike segments, ensuring diversity.</li>
+                <li><strong>Redundant transitions</strong>: joint visual-action embeddings are clustered to detect and discard look-alike segments, ensuring diversity.</li>
               </ul>
               <p>By combining both filters, SCIZOR targets distinct sources of noise and repetition, yielding a higher-quality training set.</p>
           </div>
@@ -210,7 +228,7 @@
           </div>
 
 
-          <h3 class="title is-4">Visualization of types of suboptimal data identified by SCIZOR.</h3>
+          <h3 class="title is-4">Types of suboptimal data identified by SCIZOR.</h3>
           <div class="failure-container">
             <div class="failure-pair">
               <video autoplay loop muted playsinline>
@@ -266,13 +284,18 @@
         </div>
       </div> -->
       <!-- BibTeX -->
-      <!-- <div class="columns is-centered">
+      <div class="columns is-centered">
         <div class="column is-four-fifths">
           <h2 class="title is-3 has-text-centered">BibTeX</h2>
-          <pre><code>@inproceedings{scizor2025,...}</code></pre>
+          <pre><code>@article{yu2025scizor,
+  title={SCIZOR: Self-Supervised Data Curation for Large-Scale Imitation Learning},
+  author={Zhang, Yu and Xie, Yuqi and Liu, Huihan and Shah, Rutav and Wan, Michael and Fan, Linxi and Zhu, Yuke},
+  journal={arXiv preprint arXiv:},
+  year={2025}
+}
+        </code></pre>
         </div>
       </div>
-    </div> -->
 
     
   <footer>
